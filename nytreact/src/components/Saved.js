@@ -9,6 +9,8 @@ class Saved extends Component {
 		return (
 			<Paper zDepth={2}>
 				<h4>Saved Articles</h4>
+				<div className="saved-articles">
+				</div>
 			</Paper>
 		)
 	}

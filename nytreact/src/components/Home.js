@@ -21,6 +21,8 @@ class Home extends Component {
 
 				<Paper zDepth={2}>
 					<h4>Results</h4>
+					<div className="display-results">
+					</div>
 				</Paper>
 			</div>
 		)
