@@ -3,8 +3,56 @@ import { Link } from "react-router-dom";
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import API from "../utls/API";
 
 class Home extends Component {
+	state = {
+		articles: [],
+		title: '',
+		date: '',
+		url: ''
+	};
+
+	componentDidMount() {
+		this.loadArticles();
+	}
+
+	loadArticles = () => {
+		API.getArticles()
+			.then(res =>
+				this.setState({ article: res.data,
+								title: '',
+								date: '',
+								url: ''})
+			).catch(err => console.log(err));
+	};
+
+	deleteArticles = id => {
+		API.deleteArticles(id)
+			.then(res => this.loadArticles())
+			.catch(err => console.log(err));
+	};
+
+	handleInputChange = event => {
+		const { name, value } = event.target;
+		this.setState({
+			[name]: value
+		});
+	};
+
+	handleFormSubmit = event => {
+		event.preventDefault();
+
+		if (this.state.title && this.state.date) {
+			API.postArticle({
+				title: this.state.title,
+				date: this.state.date,
+				url: this.state.url
+			}).then(res => this.loadArticles())
+			.catch(err => console.log(err));
+		}
+	};
+
 	render() {
 		return (
 			<div>
