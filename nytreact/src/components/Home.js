@@ -10,13 +10,13 @@ class Home extends Component {
 			<div>
 				<Paper zDepth={2}>
 					<h4>Search for article</h4>
-					<TextField hintText="Search Topic" />
+					<TextField className="search-term" hintText="Search Topic" />
 						<br />
-					<TextField hintText="Start Year" />
+					<TextField className="start-year" hintText="Start Year" />
 						<br />
-					<TextField hintText="End Year" />
+					<TextField className="end-year" hintText="End Year" />
 						<br />
-					<RaisedButton label="Search" primary={true} />
+					<RaisedButton className="run-search" label="Search" primary={true} />
 				</Paper>
 
 				<Paper zDepth={2}>

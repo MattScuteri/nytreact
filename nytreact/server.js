@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(express.static('client/build'));
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/nytreact')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/nytreact');
 
 app.listen(PORT, function() {
 	console.log(`App listening on PORT ${PORT}!`);
