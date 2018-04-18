@@ -3,8 +3,14 @@ import { Link } from "react-router-dom";
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import API from '../utils/API';
+
+// const initialState = {
+
+// }
 
 class Home extends Component {
+
 	render() {
 		return (
 			<div>
