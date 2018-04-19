@@ -1,14 +1,14 @@
-import router from "express";
+import axios from 'axios'
 
 export default {
 	getArticles: function() {
-		return router.get('/api/articles');
+		return axios.get('/api/articles');
 	},
 	postArticles: function(articleData) {
-		return router.post('/api/articles', articleData);
+		return axios.post('/api/articles', articleData);
 	},
 
 	deleteArticles: function(id) {
-		return router.delete('/api/articles' + id);
+		return axios.delete('/api/articles' + id);
 	}
 };

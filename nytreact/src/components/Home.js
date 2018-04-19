@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import API from "../utls/API";
+import API from "../utils/API";
 
 class Home extends Component {
 	state = {
